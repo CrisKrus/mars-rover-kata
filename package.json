@@ -1,15 +1,14 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "mars-rover-kata",
   "version": "1.0.0",
-  "description": "Basic boilerplate project with Typecript for katas",
+  "description": "https://kata-log.rocks/mars-rover-kata",
   "main": "main.ts",
   "engineStrict": true,
   "engines": {
     "node": ">= 8.9.0"
   },
   "contributors": [
-    "Adrián Ferrera <adrian.ferrera@leanmind.es>",
-    "Daniel Ramos <daniel.ramos@leanmind.es>"
+    "Cristian Suarez <cristian.suarez@leanmind.es>"
   ],
   "license": "ISC",
   "scripts": {
