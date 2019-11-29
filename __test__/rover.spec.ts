@@ -27,8 +27,14 @@ class Position {
 class Rover {
   private position: Position;
 
-  constructor(initialPosition: Position) {
+  private constructor(initialPosition: Position) {
     this.position = initialPosition;
+  }
+
+  public static startFacingNorth(): Rover {
+    return new Rover(
+      new Position(new Point(0, 0), new Direction().facingNorth()),
+    );
   }
 
   currentPosition(): Position {
@@ -37,18 +43,14 @@ class Rover {
 }
 
 describe('Rover', () => {
-  it('should start on an initial point and direction', () => {
-    const point = new Point(0, 0);
-    const direction = new Direction().facingNorth();
-    const initialPosition = new Position(point, direction);
-
-    const rover = new Rover(initialPosition);
+  it('should start on an initial point and facing a direction', () => {
+    const rover = Rover.startFacingNorth();
 
     const expectedPosition = new Position(
       new Point(0, 0),
       new Direction().facingNorth(),
     );
 
-    expect(rover.currentPosition()).toBe(expectedPosition);
+    expect(rover.currentPosition()).toStrictEqual(expectedPosition);
   });
 });
